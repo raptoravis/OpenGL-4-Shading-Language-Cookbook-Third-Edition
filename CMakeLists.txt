@@ -18,6 +18,8 @@ set(GLM_TEST_ENABLE OFF)
 
 # glfw
 set(BUILD_SHARED_LIBS OFF)
+set(GLFW_BUILD_TESTS OFF)
+set(GLFW_BUILD_EXAMPLES OFF)
 
 add_subdirectory( thirdparty/glm-0.9.9.6 )
 add_subdirectory( thirdparty/glfw-3.3 )
