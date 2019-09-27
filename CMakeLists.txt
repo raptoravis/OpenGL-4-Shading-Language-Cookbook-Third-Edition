@@ -5,6 +5,13 @@ set(CXX_STANDARD_REQUIRED ON)
 
 project (GLSLCOOKBOOK)
 
+IF(MINGW)
+  SET(CMAKE_C_FLAGS  ${CMAKE_C_FLAGS} "-g")
+  SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-g")
+ELSE(MINGW)
+  #
+ENDIF(MINGW)
+
 add_subdirectory( thirdparty/glm-0.9.9.6 )
 add_subdirectory( thirdparty/glfw-3.3 )
 
