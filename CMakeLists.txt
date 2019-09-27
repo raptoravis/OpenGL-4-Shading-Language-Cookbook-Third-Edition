@@ -8,6 +8,9 @@ project (GLSLCOOKBOOK)
 add_subdirectory( thirdparty/glm-0.9.9.6 )
 add_subdirectory( thirdparty/glfw-3.3 )
 
+include_directories( thirdparty/glm-0.9.9.6/
+				thirdparty/glfw-3.3/include)
+
 if(MSVC)
   add_definitions(/DNOMINMAX)
 endif()
