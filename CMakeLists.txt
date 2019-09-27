@@ -5,6 +5,9 @@ set(CXX_STANDARD_REQUIRED ON)
 
 project (GLSLCOOKBOOK)
 
+add_subdirectory( thirdparty/glm-0.9.9.6 )
+add_subdirectory( thirdparty/glfw-3.3 )
+
 if(MSVC)
   add_definitions(/DNOMINMAX)
 endif()
@@ -15,8 +18,8 @@ if(UNIX)
     set(OpenGL_GL_PREFERENCE GLVND)
 endif()
 
-find_package( glm CONFIG REQUIRED )
-find_package( glfw3 CONFIG REQUIRED )
+#find_package( glm CONFIG REQUIRED )
+#find_package( glfw3 CONFIG REQUIRED )
 find_package( OpenGL REQUIRED )
 
 include_directories( ingredients )
