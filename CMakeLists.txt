@@ -13,6 +13,12 @@ ELSE(MINGW)
   #
 ENDIF(MINGW)
 
+# glm
+set(GLM_TEST_ENABLE OFF)
+
+# glfw
+set(BUILD_SHARED_LIBS OFF)
+
 add_subdirectory( thirdparty/glm-0.9.9.6 )
 add_subdirectory( thirdparty/glfw-3.3 )
 
