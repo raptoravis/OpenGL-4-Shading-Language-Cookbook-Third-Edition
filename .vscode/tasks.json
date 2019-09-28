@@ -26,7 +26,7 @@
             ]
         },
         {
-            "label": "build vs2017",
+            "label": "build sln",
             "type": "shell",
             "command": "./build-sln.bat",
             "group": {
@@ -38,7 +38,7 @@
             ]
         },
         {
-            "label": "build target vs2017",
+            "label": "build target sln",
             "type": "shell",
             "command": "./build-sln.bat chapter01",
             "group": {
