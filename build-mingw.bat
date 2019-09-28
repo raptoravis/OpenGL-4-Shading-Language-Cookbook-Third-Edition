@@ -8,4 +8,4 @@ rem cd ../..
 
 rem cmake --build ./build/mingw
 
-./build-cmake.bat mingw build
+./build-cmake.bat mingw build %1

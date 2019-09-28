@@ -1,15 +1,32 @@
 @echo off
 
 echo "=========================================================="
-echo "Usage: build-cmake.bat <vs2017|vs2019|mingw> [open|build]"
+echo "Usage: build-cmake.bat <vs2017|vs2019|mingw> [open|build] [target]"
 echo "=========================================================="
 
 set GENERATOR=%1
 set ACTION=%2 
+set TARGET=%3 
+
 set BUILD_DIR=./build/win64
  
 if "%GENERATOR%"=="" (set GENERATOR=vs2017)
-if "%ACTION%"=="" (set ACTION=open)
+if "%ACTION%"=="" (set ACTION=open) 
+
+if "%TARGET%"==" " set TARGET=_none_
+if "%TARGET%"=="" set TARGET=_none_
+
+REM echo "%TARGET%"
+
+call :Trim GENERATOR %GENERATOR%
+call :Trim ACTION %ACTION%
+
+if "%TARGET%"=="_none_" (
+    set TARGET=
+) else (
+    call :Trim TARGET %TARGET%
+    set TARGET=--target %TARGET%
+)
 
 call :Trim GENERATOR %GENERATOR%
 call :Trim ACTION %ACTION%
@@ -30,7 +47,7 @@ if "%GENERATOR%"=="vs2017" (
 )
 
 echo "=========================================================="
-echo "GENERATOR: %GENERATOR% ACTION: %ACTION%"
+echo "GENERATOR: %GENERATOR% ACTION: %ACTION% %TARGET%"
 echo "=========================================================="
 
 cmake -S . -B %BUILD_DIR% -G %CMAKE_GENERATOR% 
@@ -41,7 +58,7 @@ if "%ACTION%"=="open" (
     cmake --open %BUILD_DIR%
 ) else (
     if "%ACTION%"=="build" (
-        cmake --build %BUILD_DIR%
+        cmake --build %BUILD_DIR% %TARGET%
     ) else (
        echo "invalid ACTION: %ACTION%"
     )

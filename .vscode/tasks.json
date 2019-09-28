@@ -2,13 +2,28 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "compile",
+            "label": "build",
             "type": "shell",
             "command": "./build-mingw.bat",
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "build target",
+            "type": "shell",
+            "command": "./build-mingw.bat chapter01",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }

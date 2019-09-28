@@ -2,12 +2,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C++ Launch (GDB)",
+            "name": "AAAAA (GDB)",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/mingw/chapter01/chapter01.exe", // 可执行文件位置
             "miDebuggerPath":"C:\\msys64\\mingw64\\bin\\gdb.exe", // gdb 位置
-            "args": ["basic"],
+            "args": [
+                "basic"
+            ],
             "stopAtEntry": false,
             // "cwd": "${workspaceFolder}",
             "cwd": "${workspaceFolder}/build/mingw/chapter01/",
